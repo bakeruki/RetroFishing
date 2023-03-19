@@ -41,14 +41,17 @@ public class BobberScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isInWater)
+        if (!PauseMenu.isPaused)
         {
-            UpdateWaterState();
-        }
+            if (isInWater)
+            {
+                UpdateWaterState();
+            }
 
-        if (!hasCasted)
-        {
-            UpdateCastState();
+            if (!hasCasted)
+            {
+                UpdateCastState();
+            }
         }
     }
 
